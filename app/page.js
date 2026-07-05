@@ -102,8 +102,11 @@ export default function Home() {
               <span className="step-num">2</span>
               <h3>Meet in the city</h3>
               <p>
-                Join me and a few fellow internationals at a café — for the
-                neighbourhoods, the culture, and the spots worth knowing.
+                I meet with just 1–3 people at a coffee place or bar. We sit
+                down at a table and I bring my laptop with all the relevant
+                info. It's a relaxed but genuinely informative session —
+                personal, and fully tailored to your interests and what you're
+                looking for.
               </p>
             </li>
             <li className="step">
@@ -125,8 +128,9 @@ export default function Home() {
         <div className="wrap">
           <h2>What we cover</h2>
           <p className="section-intro">
-            Each mini meetup runs for <strong>1 hour 45 minutes</strong> — long
-            enough to cover the essentials and dive into what's relevant to you.
+            An intimate session with just <strong>1–3 people</strong>, running
+            for <strong>1 hour 45 minutes</strong> — long enough to cover the
+            essentials and dive into what's relevant to you.
           </p>
           <div className="cover-grid">
             <div className="cover-card">

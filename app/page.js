@@ -1,11 +1,10 @@
 import Testimonials from "./components/Testimonials";
 import ContactForm from "./components/ContactForm";
 import AboutPhoto from "./components/AboutPhoto";
+import MeetupLogo from "./components/MeetupLogo";
 import Media from "./components/Media";
-import PhotoGrid from "./components/PhotoGrid";
 import HeroSlideshow from "./components/HeroSlideshow";
 import events from "./data/events";
-import experiences from "./data/experiences";
 import {
   MEETUP_URL,
   CONTACT_EMAIL,
@@ -121,23 +120,30 @@ export default function Home() {
             <li className="step">
               <span className="step-num">1</span>
               <h3>Sign up on Meetup</h3>
-              <p>Pick an upcoming mini meetup and reserve your spot in a few clicks.</p>
+              <p>
+                Browse the upcoming mini meetups and reserve your spot in a
+                couple of clicks.
+              </p>
+              <MeetupLogo />
             </li>
             <li className="step">
               <span className="step-num">2</span>
               <h3>Meet in the city</h3>
               <p>
-                I meet with just 1–3 people at a coffee place or bar. We sit
-                down at a table and I bring my laptop with all the relevant
-                info. It's a relaxed but genuinely informative session —
-                personal, and fully tailored to your interests and what you're
-                looking for.
+                I meet with just 1–3 people at a coffee place or bar. We sit at
+                a table, I bring my laptop with all the info, and we dive into a
+                relaxed, genuinely informative session — personal and tailored
+                to your interests.
               </p>
             </li>
             <li className="step">
               <span className="step-num">3</span>
-              <h3>Pay what you feel</h3>
-              <p>Afterwards, contribute whatever the session was worth to you. No fixed price.</p>
+              <h3>Pay what you feel &amp; share your thoughts</h3>
+              <p>
+                Afterwards, contribute whatever the session was worth to you —
+                no fixed price. And share your feedback, so I can make the
+                sessions even better.
+              </p>
             </li>
           </ol>
           <div className="center">
@@ -289,7 +295,6 @@ export default function Home() {
         <div className="wrap">
           <h2>What people say</h2>
           <Testimonials />
-          <PhotoGrid items={experiences} title="Moments from the meetups" />
         </div>
       </section>
 

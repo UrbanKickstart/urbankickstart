@@ -448,38 +448,42 @@ h2 {
 .steps {
   list-style: none;
   padding: 0;
-  margin: 2rem 0;
+  margin: 2.8rem 0;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.2rem;
+  gap: 2.8rem;
 }
 .step {
-  background: var(--card);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 1.8rem 1.5rem;
+  text-align: center;
 }
 .step-num {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
-  width: 42px;
-  height: 42px;
+  width: 54px;
+  height: 54px;
   border-radius: 50%;
   background: var(--accent);
   color: #fff;
   font-weight: 700;
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
+  font-size: 1.4rem;
+  margin: 0 auto 1.1rem;
 }
 .step h3 {
-  margin: 0 0 0.4rem;
-  font-size: 1.2rem;
+  margin: 0 0 0.6rem;
+  font-size: 1.5rem;
 }
 .step p {
   margin: 0;
-  color: var(--muted);
-  font-size: 1rem;
+  color: var(--fg);
+  font-size: 1.18rem;
+  line-height: 1.6;
+}
+.step-logo {
+  height: 34px;
+  width: auto;
+  display: block;
+  margin: 1rem auto 0;
 }
 @media (max-width: 720px) {
   .steps {
@@ -686,6 +690,62 @@ h2 {
 }
 .dot.active {
   background: var(--accent);
+}
+
+/* Mixed carousel — quotes and photos, equal square tiles, two side by side */
+.mixed-carousel {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 2rem;
+}
+.mixed-track {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.mtile {
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.mtile-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.mtile-quote {
+  background: var(--card);
+  border: 1px solid var(--line);
+  padding: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.mtile-quote blockquote {
+  margin: 0 0 0.8rem;
+  font-size: 1.05rem;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 7;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.mtile-name {
+  color: var(--muted);
+  font-weight: 600;
+}
+@media (max-width: 640px) {
+  .mixed-track {
+    grid-template-columns: 1fr;
+  }
+  .mixed-track .mtile:nth-child(2) {
+    display: none;
+  }
 }
 
 /* Press */

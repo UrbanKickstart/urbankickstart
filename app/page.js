@@ -263,19 +263,6 @@ export default function Home() {
         <div className="wrap center">
           <h2>Hi, I'm Emma</h2>
           <div className="mindmap">
-            <svg
-              className="mm-lines"
-              viewBox="0 0 100 100"
-              preserveAspectRatio="none"
-              aria-hidden="true"
-            >
-              <line x1="50" y1="50" x2="18" y2="18" />
-              <line x1="50" y1="50" x2="82" y2="18" />
-              <line x1="50" y1="50" x2="9" y2="50" />
-              <line x1="50" y1="50" x2="91" y2="50" />
-              <line x1="50" y1="50" x2="22" y2="84" />
-              <line x1="50" y1="50" x2="78" y2="84" />
-            </svg>
             <div className="mm-center">
               <div className="mm-photo">
                 <AboutPhoto />
@@ -283,18 +270,15 @@ export default function Home() {
               <span className="mm-name">Emma</span>
               <span className="mm-role">Founder &amp; local</span>
             </div>
-            <div className="mm-node n1">Born &amp; raised local</div>
-            <div className="mm-node n2">International mindset</div>
-            <div className="mm-node n3">Double Master's</div>
-            <div className="mm-node n4">Strategy + people</div>
-            <div className="mm-node n5">Culture &amp; city trends</div>
-            <div className="mm-node n6">Here to connect people</div>
+            <span className="mm-node n1">Born &amp; raised local</span>
+            <span className="mm-node n2">International mindset</span>
+            <span className="mm-node n3">Double Master's</span>
+            <span className="mm-node n4">Strategy + people</span>
+            <span className="mm-node n5">Culture &amp; city trends</span>
+            <span className="mm-node n6">Theatre &amp; dancing</span>
+            <span className="mm-node n7">Architecture &amp; philosophy</span>
+            <span className="mm-node n8">Here to connect people</span>
           </div>
-          <p className="mm-caption">
-            I run Urban Kickstart on a{" "}
-            <strong className="hl">pay-what-you-feel</strong> basis — because
-            connecting with your city shouldn't depend on your budget.
-          </p>
         </div>
       </section>
 

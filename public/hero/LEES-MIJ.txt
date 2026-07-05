@@ -1,0 +1,7 @@
+Zet hier je hero-foto's neer (de compilatie die bovenaan de pagina wisselt).
+
+Bestandsnamen: 1.jpg, 2.jpg, 3.jpg, ... (tot 8; meer kan, vraag Claude om de lijst uit te breiden)
+Gebruik bij voorkeur LIGGENDE (landscape) foto's — die vullen het brede vlak het mooist.
+Ontbrekende nummers worden automatisch overgeslagen.
+
+De huidige hero-foto (public/amsterdam/hero.jpg) staat automatisch al als eerste in de reeks.

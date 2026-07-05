@@ -4,6 +4,7 @@ import Gallery from "./components/Gallery";
 import AboutPhoto from "./components/AboutPhoto";
 import Media from "./components/Media";
 import PhotoGrid from "./components/PhotoGrid";
+import HeroSlideshow from "./components/HeroSlideshow";
 import events from "./data/events";
 import experiences from "./data/experiences";
 import {
@@ -38,7 +39,8 @@ export default function Home() {
     <>
       {/* Hero */}
       <section className="hero">
-        <div className="wrap">
+        <HeroSlideshow />
+        <div className="wrap hero-content">
           <h1>Get to know the real Amsterdam.</h1>
           <p className="lead">
             Small meetups for international professionals and their partners

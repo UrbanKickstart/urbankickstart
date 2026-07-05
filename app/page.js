@@ -4,6 +4,7 @@ import AboutPhoto from "./components/AboutPhoto";
 import MeetupLogo from "./components/MeetupLogo";
 import Media from "./components/Media";
 import HeroSlideshow from "./components/HeroSlideshow";
+import HeroOutline from "./components/HeroOutline";
 import events from "./data/events";
 import {
   MEETUP_URL,
@@ -39,19 +40,7 @@ export default function Home() {
       <section className="hero">
         <HeroSlideshow />
         <div className="wrap hero-content">
-          <svg
-            className="hero-outline"
-            viewBox="0 0 600 340"
-            fill="none"
-            stroke="#fff"
-            preserveAspectRatio="xMidYMid meet"
-            aria-hidden="true"
-          >
-            <path d="M40 300 A 260 260 0 0 1 560 300" strokeWidth="2" strokeOpacity="0.55" />
-            <path d="M95 300 A 205 205 0 0 1 505 300" strokeWidth="2" strokeOpacity="0.45" />
-            <path d="M150 300 A 150 150 0 0 1 450 300" strokeWidth="2" strokeOpacity="0.35" />
-            <line x1="30" y1="300" x2="570" y2="300" strokeWidth="2" strokeOpacity="0.55" />
-          </svg>
+          <HeroOutline />
           <h1>
             Get to know <span className="font-display">the real</span>{" "}
             Amsterdam.

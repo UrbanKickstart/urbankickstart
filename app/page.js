@@ -45,15 +45,7 @@ export default function Home() {
             Get to know <span className="font-display">the real</span>{" "}
             Amsterdam.
           </h1>
-          <p className="lead">
-            Small meetups for international professionals and their partners
-            settling into Amsterdam — connect with the city, and with each
-            other, guided by me, a born-and-raised local.
-          </p>
           <div className="hero-actions">
-            <a className="btn" href={MEETUP_URL} target="_blank" rel="noreferrer">
-              Join a mini meetup
-            </a>
             <a className="btn btn-ghost" href="#how">
               How it works
             </a>

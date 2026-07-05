@@ -119,8 +119,44 @@ export default function Home() {
         </div>
       </section>
 
+      {/* What we cover */}
+      <section id="cover" className="section">
+        <div className="wrap">
+          <h2>What we cover</h2>
+          <p className="section-intro">
+            Each mini meetup runs for <strong>1 hour 45 minutes</strong> — long
+            enough to cover the essentials and dive into what's relevant to you.
+          </p>
+          <div className="cover-grid">
+            <div className="cover-card">
+              <h3>The essentials</h3>
+              <p className="cover-sub">A quick, honest grounding in the city:</p>
+              <ul className="ticks">
+                <li>Amsterdam's history</li>
+                <li>Current trends</li>
+                <li>Culture</li>
+                <li>Subcultures</li>
+                <li>The neighbourhoods</li>
+              </ul>
+            </div>
+            <div className="cover-card">
+              <h3>Tailored to you</h3>
+              <p className="cover-sub">
+                Then we build the rest around your life and interests:
+              </p>
+              <ul className="ticks">
+                <li>Annual &amp; one-off events</li>
+                <li>Courses &amp; workshops</li>
+                <li>Places worth your time</li>
+                <li>Subscriptions &amp; memberships worth having</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Meetups + agenda */}
-      <section id="meetups" className="section">
+      <section id="meetups" className="section section-alt">
         <div className="wrap">
           <h2>Upcoming mini meetups</h2>
           <p className="section-intro">
@@ -172,7 +208,7 @@ export default function Home() {
       <Gallery />
 
       {/* Testimonials */}
-      <section className="section">
+      <section className="section section-alt">
         <div className="wrap">
           <h2>What people say</h2>
           <Testimonials />
@@ -181,7 +217,7 @@ export default function Home() {
 
       {/* Press */}
       {hasPress && (
-        <section className="section section-alt">
+        <section className="section">
           <div className="wrap">
             <h2>In the press</h2>
             <div className="press-grid">
@@ -206,7 +242,7 @@ export default function Home() {
       )}
 
       {/* For companies */}
-      <section className="section">
+      <section className="section section-alt">
         <div className="wrap narrow center">
           <h2>Hiring international talent?</h2>
           <p>
@@ -222,7 +258,7 @@ export default function Home() {
       </section>
 
       {/* Contact */}
-      <section id="contact" className="section section-alt">
+      <section id="contact" className="section">
         <div className="wrap narrow">
           <h2>Get in touch</h2>
           <p className="section-intro">

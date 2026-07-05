@@ -39,7 +39,7 @@ export default function Gallery() {
   if (visible.length === 0) return null;
 
   return (
-    <section className="section section-alt">
+    <section className="section">
       <div className="wrap">
         <h2>Impressions of Amsterdam</h2>
         <p className="section-intro">

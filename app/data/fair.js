@@ -11,6 +11,8 @@ const fair = [
   { src: "/fair/4.jpg", alt: "Urban Kickstart at the IamExpat Fair" },
   { src: "/fair/5.jpg", alt: "Urban Kickstart at the IamExpat Fair" },
   { src: "/fair/6.jpg", alt: "Urban Kickstart at the IamExpat Fair" },
+  { src: "/fair/7.jpg", alt: "Urban Kickstart at the IamExpat Fair" },
+  { src: "/fair/8.jpg", alt: "Urban Kickstart at the IamExpat Fair" },
 ];
 
 export default fair;

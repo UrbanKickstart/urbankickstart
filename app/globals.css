@@ -182,18 +182,31 @@ h2 {
   background-color: #3d1a2c;
   overflow: hidden;
 }
-.hero-slides {
+.hero-mosaic {
   position: absolute;
   inset: 0;
   z-index: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
 }
-.hero-slide {
+@media (max-width: 800px) {
+  .hero-mosaic {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+  }
+}
+.hero-tile {
+  position: relative;
+  overflow: hidden;
+}
+.hero-tile-img {
   position: absolute;
   inset: 0;
   background-size: cover;
   background-position: center;
   opacity: 0;
-  transition: opacity 1.2s ease;
+  transition: opacity 1s ease;
 }
 .hero-overlay {
   position: absolute;

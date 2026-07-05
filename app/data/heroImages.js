@@ -1,9 +1,11 @@
-// Photos that crossfade in the hero at the top of the page.
+// Photos for the hero mosaic at the top of the page.
 //
-// Use landscape (wide) photos for the best fit. Drop them in  public/hero/
-// as 1.jpg, 2.jpg, 3.jpg ...  Missing numbers are skipped automatically.
-// The first entry reuses your existing hero photo so it works right away.
-// Need more than shown? Copy a line and bump the number.
+// The hero is a grid of tiles; each tile crossfades through these photos on its
+// own timer, so lots of photos are on show and they change at different moments.
+//
+// Drop photos in  public/hero/  as 1.jpg, 2.jpg, 3.jpg ...  Missing numbers are
+// skipped. The more you add, the richer and more varied the wall. The first
+// entry reuses your existing hero photo so it works right away.
 
 const heroImages = [
   { src: "/amsterdam/hero.jpg" },
@@ -15,6 +17,10 @@ const heroImages = [
   { src: "/hero/6.jpg" },
   { src: "/hero/7.jpg" },
   { src: "/hero/8.jpg" },
+  { src: "/hero/9.jpg" },
+  { src: "/hero/10.jpg" },
+  { src: "/hero/11.jpg" },
+  { src: "/hero/12.jpg" },
 ];
 
 export default heroImages;

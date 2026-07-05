@@ -71,20 +71,22 @@ export default function Testimonials() {
     };
   }, []);
 
-  // Spread the photos evenly across the quotes.
+  // Start with a photo, then spread the remaining photos across the quotes.
   const items = [];
   const Q = testimonials.length;
-  const P = photos.length;
+  if (photos.length > 0) items.push({ type: "photo", src: photos[0] });
+  const rest = photos.slice(1);
+  const P = rest.length;
   let pi = 0;
   for (let k = 0; k < Q; k++) {
     items.push({ type: "quote", quote: testimonials[k].quote, name: testimonials[k].name });
     while (pi < P && Math.floor(((pi + 1) * Q) / (P + 1)) === k + 1) {
-      items.push({ type: "photo", src: photos[pi] });
+      items.push({ type: "photo", src: rest[pi] });
       pi++;
     }
   }
   while (pi < P) {
-    items.push({ type: "photo", src: photos[pi] });
+    items.push({ type: "photo", src: rest[pi] });
     pi++;
   }
   const count = items.length;

@@ -1,24 +1,64 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import press from "../data/press";
 import fair from "../data/fair";
 import PhotoGrid from "./PhotoGrid";
 
-// Shows the outlet logo; falls back to the outlet name in text if the logo
-// image is missing or fails to load.
-function Logo({ item }) {
-  const [failed, setFailed] = useState(false);
-  if (!item.logo || failed) {
-    return <span className="press-outlet">{item.outlet}</span>;
-  }
+function candidates(src) {
+  const m = src.match(/^(.*)\.([^./]+)$/);
+  if (!m) return [src];
+  const base = m[1];
+  const orig = m[2];
+  const exts = ["jpg", "jpeg", "JPG", "JPEG", "png", "PNG", "webp"];
+  const ordered = [orig, ...exts.filter((e) => e.toLowerCase() !== orig.toLowerCase())];
+  return ordered.map((e) => `${base}.${e}`);
+}
+
+function MediaSquare({ item, idx }) {
+  const [bg, setBg] = useState(null);
+
+  useEffect(() => {
+    if (!item.image) return;
+    let active = true;
+    const list = candidates(item.image);
+    let j = 0;
+    const tryNext = () => {
+      if (j >= list.length) return;
+      const im = new window.Image();
+      im.onload = () => {
+        if (active) setBg(list[j]);
+      };
+      im.onerror = () => {
+        j++;
+        tryNext();
+      };
+      im.src = list[j];
+    };
+    tryNext();
+    return () => {
+      active = false;
+    };
+  }, [item.image]);
+
   return (
-    <img
-      className="press-logo"
-      src={item.logo}
-      alt={item.outlet}
-      onError={() => setFailed(true)}
-    />
+    <a
+      className={"media-square v" + (idx % 3)}
+      href={item.url}
+      target="_blank"
+      rel="noreferrer"
+      style={bg ? { backgroundImage: `url("${bg}")` } : undefined}
+    >
+      {!bg && (
+        <span className="ms-fallback">
+          <span className="press-outlet">{item.outlet}</span>
+        </span>
+      )}
+      <span className="media-square-overlay">
+        {item.description && <span className="mso-text">{item.description}</span>}
+        <span className="media-square-btn">{item.linkText || "View"} →</span>
+      </span>
+    </a>
   );
 }
 
@@ -32,21 +72,7 @@ export default function Media() {
         <h2>In the media</h2>
         <div className="media-squares">
           {items.map((p, i) => (
-            <a
-              key={i}
-              className="media-square"
-              href={p.url}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <div className="media-square-top">
-                <Logo item={p} />
-              </div>
-              <div className={"media-square-bottom v" + (i % 3)}>
-                {p.description && <p>{p.description}</p>}
-                <span className="media-square-btn">{p.linkText || "View"} →</span>
-              </div>
-            </a>
+            <MediaSquare key={i} item={p} idx={i} />
           ))}
         </div>
         <PhotoGrid items={fair} title="At the IamExpat Fair Amsterdam" />

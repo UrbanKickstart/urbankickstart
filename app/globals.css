@@ -1,8 +1,16 @@
 :root {
-  --bg: #0f0f10;
-  --fg: #f7f7f5;
-  --accent: #ff6a3d;
-  --muted: #a0a0a0;
+  --bg: #f2f0ea; /* cream */
+  --bg-alt: #e3d9e3; /* light lilac */
+  --fg: #171317; /* near-black text */
+  --muted: #6f5f6a; /* soft muted plum */
+  --accent: #7a3a5a; /* berry */
+  --accent-dark: #5c2b44; /* deep berry */
+  --aubergine: #3d1a2c; /* deep aubergine */
+  --lime: #e8ee5b; /* chartreuse pop */
+  --line: #ddd2dd; /* soft lilac line */
+  --card: #ffffff;
+  --radius: 16px;
+  --wrap: 1040px;
 }
 
 * {
@@ -17,22 +25,486 @@ body {
   color: var(--fg);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
     sans-serif;
-  line-height: 1.5;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
 }
 
-.container {
-  max-width: 720px;
-  margin: 0 auto;
-  padding: 6rem 1.5rem;
+a {
+  color: inherit;
 }
 
-h1 {
-  font-size: 3rem;
-  margin: 0 0 1rem;
+h1,
+h2 {
   letter-spacing: -0.02em;
+  line-height: 1.1;
 }
 
-p {
+.wrap {
+  max-width: var(--wrap);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.narrow {
+  max-width: 680px;
+}
+
+.center {
+  text-align: center;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  padding: 0.85rem 1.6rem;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+.btn:hover {
+  background: var(--accent-dark);
+  transform: translateY(-1px);
+}
+.btn-ghost {
+  background: transparent;
+  color: var(--fg);
+  border: 1.5px solid var(--line);
+}
+.btn-ghost:hover {
+  background: #fff;
+}
+.btn-small {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+}
+/* Lime highlighter accent (e.g. on "pay-what-you-feel") */
+.hl {
+  background: linear-gradient(transparent 60%, var(--lime) 60%);
+  padding: 0 0.08em;
+}
+
+/* Header */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(242, 240, 234, 0.85);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+.logo {
+  font-weight: 700;
+  font-size: 1.15rem;
+}
+.site-header nav {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+}
+.site-header nav a {
+  text-decoration: none;
+  font-weight: 500;
   color: var(--muted);
-  font-size: 1.125rem;
+}
+.site-header nav a:hover {
+  color: var(--fg);
+}
+.site-header nav a.btn {
+  color: #fff;
+}
+
+/* Hero — full-width background photo with text on top.
+   Save your photo as  public/amsterdam/hero.jpg  (drop it in via Finder).
+   Until it's there, a warm dark background shows instead, so text stays readable. */
+.hero {
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  padding: 5rem 0;
+  background-color: #3d1a2c;
+  background-image: linear-gradient(
+      rgba(61, 26, 44, 0.45),
+      rgba(61, 26, 44, 0.62)
+    ),
+    url("/amsterdam/hero.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.hero h1 {
+  font-size: clamp(2.5rem, 6.5vw, 4.4rem);
+  margin: 0 0 1.2rem;
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.25);
+}
+.lead {
+  font-size: clamp(1.1rem, 2.5vw, 1.45rem);
+  color: rgba(255, 255, 255, 0.94);
+  max-width: 640px;
+  margin: 0 auto 2rem;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.3);
+}
+.hero-actions {
+  display: flex;
+  gap: 0.8rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.hero .btn-ghost {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.65);
+}
+.hero .btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+/* Sections */
+.section {
+  padding: 4.5rem 0;
+}
+.section-alt {
+  background: var(--bg-alt);
+}
+.section h2 {
+  font-size: clamp(1.6rem, 3.5vw, 2.3rem);
+  margin: 0 0 1rem;
+}
+.section p {
+  font-size: 1.1rem;
+  color: var(--fg);
+}
+.section-intro {
+  color: var(--muted);
+  max-width: 640px;
+  margin-top: 0;
+}
+
+/* Agenda */
+.agenda {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.agenda-item {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1rem 1.4rem;
+}
+.agenda-date {
+  display: flex;
+  flex-direction: column;
+  min-width: 130px;
+}
+.agenda-day {
+  font-weight: 700;
+}
+.agenda-time {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.agenda-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.agenda-loc {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.agenda-link {
+  color: var(--accent-dark);
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.agenda-empty {
+  color: var(--muted);
+  background: var(--card);
+  border: 1px dashed var(--line);
+  border-radius: var(--radius);
+  padding: 1.4rem;
+  margin: 2rem 0;
+}
+
+/* Carousel */
+.carousel {
+  position: relative;
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 0.5rem;
+}
+.quote-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 2.5rem 2rem 2rem;
+  margin: 0;
+  text-align: center;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: fade 0.4s ease;
+}
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  flex-shrink: 0;
+}
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.quote-card blockquote {
+  margin: 0 0 1rem;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  max-width: 640px;
+}
+.quote-card figcaption {
+  color: var(--muted);
+  font-weight: 600;
+}
+.carousel-arrow {
+  background: var(--card);
+  border: 1px solid var(--line);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--fg);
+  transition: background 0.15s ease;
+}
+.carousel-arrow:hover {
+  background: var(--bg-alt);
+}
+.dots {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.2rem;
+}
+.dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  border: none;
+  background: var(--line);
+  cursor: pointer;
+  padding: 0;
+}
+.dot.active {
+  background: var(--accent);
+}
+
+/* Press */
+.press-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.2rem;
+  margin-top: 2rem;
+}
+.press-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.6rem;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.press-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+.press-outlet {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+.press-format {
+  color: var(--accent-dark);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.press-card blockquote {
+  margin: 0.6rem 0 0;
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* Gallery — impressions of Amsterdam */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.6rem;
+  margin-top: 2rem;
+}
+.gallery-item {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--bg-alt);
+}
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+.gallery-item:hover img {
+  transform: scale(1.06);
+}
+.gallery-item.wide {
+  grid-column: span 2;
+}
+@media (max-width: 640px) {
+  .gallery-item.wide {
+    grid-column: span 1;
+  }
+}
+
+/* Contact form */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  max-width: 560px;
+}
+.contact-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-weight: 600;
+}
+.contact-form input,
+.contact-form textarea {
+  font: inherit;
+  padding: 0.75rem 0.9rem;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+  color: var(--fg);
+  resize: vertical;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: 2px solid var(--accent);
+  border-color: var(--accent);
+}
+.contact-form .btn {
+  align-self: flex-start;
+}
+.form-success {
+  margin-top: 1.5rem;
+  background: var(--bg-alt);
+  border: 1px solid var(--line);
+  color: var(--accent-dark);
+  padding: 1.2rem 1.4rem;
+  border-radius: var(--radius);
+}
+.form-error {
+  color: var(--accent-dark);
+  font-weight: 500;
+}
+
+/* Footer */
+.site-footer {
+  background: var(--aubergine);
+  color: #f2f0ea;
+  padding: 3rem 0;
+}
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.site-footer .logo {
+  color: #fff;
+}
+.footer-note {
+  color: #c9b9c4;
+  margin: 0.4rem 0 0;
+}
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.footer-links a {
+  color: #ece3ea;
+  text-decoration: none;
+}
+.footer-links a:hover {
+  color: var(--lime);
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .site-header nav a:not(.btn) {
+    display: none;
+  }
+  .agenda-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  .carousel {
+    grid-template-columns: 1fr;
+  }
+  .carousel-arrow {
+    display: none;
+  }
 }

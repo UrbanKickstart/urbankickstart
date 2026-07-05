@@ -1,0 +1,11 @@
+Zet hier je Amsterdam-foto's neer.
+
+HERO (paginabrede achtergrondfoto bovenaan):
+  hero.jpg   -> liefst een liggende (landscape) foto
+
+GALERIJ ("Impressions of Amsterdam"):
+  1.jpg, 2.jpg, 3.jpg, 4.jpg, 5.jpg, 6.jpg
+  (vierkant of liggend werkt het mooist; ze worden vierkant bijgesneden)
+
+Nummers die je nog niet hebt toegevoegd worden automatisch overgeslagen.
+Dit tekstbestandje mag je gewoon laten staan of verwijderen.

@@ -27,7 +27,7 @@ export default function Media() {
   if (items.length === 0) return null;
 
   return (
-    <section id="media" className="section">
+    <section id="media" className="section section-alt">
       <div className="wrap">
         <h2>In the media</h2>
         <div className="media-list">

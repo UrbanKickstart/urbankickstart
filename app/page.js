@@ -45,6 +45,10 @@ export default function Home() {
             Get to know <span className="font-display">the real</span>{" "}
             Amsterdam.
           </h1>
+          <p className="hero-topics">
+            History · Trends · Neighborhoods · Culture · Subculture · Yearly and
+            occasional Events · Places · Courses · Memberships
+          </p>
           <div className="hero-actions">
             <a className="btn btn-ghost" href="#how">
               How it works
@@ -53,35 +57,15 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Meet Emma */}
-      <section id="about" className="section">
-        <div className="wrap about-grid">
-          <div className="about-photo">
-            <AboutPhoto />
-          </div>
-          <div className="about-text">
-            <h2>Hi, I'm Emma</h2>
-            <p>
-              Born and raised in Amsterdam, with an international mindset and a
-              double Master's. For as long as I can remember, friends have come
-              to me for the best of the city — where to go, what's on, who to
-              meet.
-            </p>
-            <p>
-              Over time I started doing this for international professionals and
-              their partners too: the people who need it most when they arrive
-              somewhere new — capable and accomplished, but still finding their
-              footing. I know that feeling myself.
-            </p>
-            <p>
-              I believe everyone deserves to genuinely connect with the place
-              they live, and that it shouldn't depend on your budget. So for now
-              I run Urban Kickstart on a{" "}
-              <strong className="hl">pay-what-you-feel</strong> basis: you join a
-              mini meetup, we explore the city together, and afterwards you
-              contribute whatever it was worth to you.
-            </p>
-          </div>
+      {/* Audience hook */}
+      <section className="section hook">
+        <div className="wrap narrow center">
+          <p className="hook-text">
+            You've moved to Amsterdam. The job has started and the flat is
+            sorted — but the city still doesn't quite feel like yours yet. That's
+            exactly what Urban Kickstart is for: helping international
+            professionals and their partners find their place here.
+          </p>
         </div>
       </section>
 
@@ -145,11 +129,11 @@ export default function Home() {
               <h3>The essentials</h3>
               <p className="cover-sub">A quick, honest grounding in the city:</p>
               <ul className="ticks">
-                <li>Amsterdam's history</li>
-                <li>Current trends</li>
+                <li>History</li>
+                <li>Trends</li>
+                <li>Neighborhoods</li>
                 <li>Culture</li>
-                <li>Subcultures</li>
-                <li>The neighbourhoods</li>
+                <li>Subculture</li>
               </ul>
             </div>
             <div className="cover-card">
@@ -158,18 +142,50 @@ export default function Home() {
                 Then I tailor the rest to your life and interests:
               </p>
               <ul className="ticks">
-                <li>Annual &amp; one-off events</li>
-                <li>Courses &amp; workshops</li>
-                <li>Places worth your time</li>
-                <li>Subscriptions &amp; memberships worth having</li>
+                <li>Yearly &amp; occasional events</li>
+                <li>Places</li>
+                <li>Courses</li>
+                <li>Memberships</li>
               </ul>
             </div>
           </div>
         </div>
       </section>
 
+      {/* Meet Emma */}
+      <section id="about" className="section section-alt">
+        <div className="wrap about-grid">
+          <div className="about-photo">
+            <AboutPhoto />
+          </div>
+          <div className="about-text">
+            <h2>Hi, I'm Emma</h2>
+            <p>
+              Born and raised in Amsterdam, with an international mindset and a
+              double Master's. For as long as I can remember, friends have come
+              to me for the best of the city — where to go, what's on, who to
+              meet.
+            </p>
+            <p>
+              Over time I started doing this for international professionals and
+              their partners too: the people who need it most when they arrive
+              somewhere new — capable and accomplished, but still finding their
+              footing. I know that feeling myself.
+            </p>
+            <p>
+              I believe everyone deserves to genuinely connect with the place
+              they live, and that it shouldn't depend on your budget. So for now
+              I run Urban Kickstart on a{" "}
+              <strong className="hl">pay-what-you-feel</strong> basis: you join a
+              mini meetup, we explore the city together, and afterwards you
+              contribute whatever it was worth to you.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Meetups + agenda */}
-      <section id="meetups" className="section section-alt">
+      <section id="meetups" className="section">
         <div className="wrap">
           <h2>Upcoming mini meetups</h2>
           <p className="section-intro">
@@ -221,7 +237,7 @@ export default function Home() {
       <Gallery />
 
       {/* Testimonials */}
-      <section className="section section-alt">
+      <section className="section">
         <div className="wrap">
           <h2>What people say</h2>
           <Testimonials />
@@ -233,7 +249,7 @@ export default function Home() {
       <Media />
 
       {/* For companies */}
-      <section className="section section-alt">
+      <section className="section">
         <div className="wrap narrow center">
           <h2>Hiring international talent?</h2>
           <p>
@@ -249,7 +265,7 @@ export default function Home() {
       </section>
 
       {/* Contact */}
-      <section id="contact" className="section">
+      <section id="contact" className="section section-alt">
         <div className="wrap narrow">
           <h2>Get in touch</h2>
           <p className="section-intro">

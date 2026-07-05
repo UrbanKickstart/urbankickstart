@@ -1,6 +1,5 @@
 import Testimonials from "./components/Testimonials";
 import ContactForm from "./components/ContactForm";
-import Gallery from "./components/Gallery";
 import AboutPhoto from "./components/AboutPhoto";
 import Media from "./components/Media";
 import PhotoGrid from "./components/PhotoGrid";
@@ -60,7 +59,9 @@ export default function Home() {
       {/* Audience hook — checklist */}
       <section className="section hook">
         <div className="wrap narrow center">
-          <h2 className="hook-title">New in Amsterdam?</h2>
+          <h2 className="hook-title">
+            New in Amsterdam as an international professional or partner?
+          </h2>
           <ul className="checklist">
             <li className="check done">
               <svg className="ci" viewBox="0 0 24 24" aria-hidden="true">
@@ -102,13 +103,12 @@ export default function Home() {
                   strokeDasharray="3 3"
                 />
               </svg>
-              <span className="label">Social &amp; cultural integration — not yet</span>
+              <span className="label">Social &amp; cultural kickstart — not yet</span>
             </li>
           </ul>
           <p className="hook-text">
-            That last one is where Urban Kickstart comes in — for international
-            professionals and their partners, new to Amsterdam, who want to
-            genuinely connect with the city.
+            That last box is exactly what{" "}
+            <span className="hl">Urban Kickstart</span> is here for.
           </p>
         </div>
       </section>
@@ -196,35 +196,42 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Meet Emma */}
+      {/* Meet Emma — mindmap */}
       <section id="about" className="section section-alt">
-        <div className="wrap about-grid">
-          <div className="about-photo">
-            <AboutPhoto />
+        <div className="wrap center">
+          <h2>Hi, I'm Emma</h2>
+          <div className="mindmap">
+            <svg
+              className="mm-lines"
+              viewBox="0 0 100 100"
+              preserveAspectRatio="none"
+              aria-hidden="true"
+            >
+              <line x1="50" y1="50" x2="18" y2="18" />
+              <line x1="50" y1="50" x2="82" y2="18" />
+              <line x1="50" y1="50" x2="9" y2="50" />
+              <line x1="50" y1="50" x2="91" y2="50" />
+              <line x1="50" y1="50" x2="22" y2="84" />
+              <line x1="50" y1="50" x2="78" y2="84" />
+            </svg>
+            <div className="mm-center">
+              <div className="mm-photo">
+                <AboutPhoto />
+              </div>
+              <span className="mm-name">Emma</span>
+            </div>
+            <div className="mm-node n1">Born &amp; raised local</div>
+            <div className="mm-node n2">International mindset</div>
+            <div className="mm-node n3">Double Master's</div>
+            <div className="mm-node n4">Strategy + people</div>
+            <div className="mm-node n5">Culture &amp; city trends</div>
+            <div className="mm-node n6">Here to connect people</div>
           </div>
-          <div className="about-text">
-            <h2>Hi, I'm Emma</h2>
-            <p>
-              Born and raised in Amsterdam, with an international mindset and a
-              double Master's. For as long as I can remember, friends have come
-              to me for the best of the city — where to go, what's on, who to
-              meet.
-            </p>
-            <p>
-              Over time I started doing this for international professionals and
-              their partners too: the people who need it most when they arrive
-              somewhere new — capable and accomplished, but still finding their
-              footing. I know that feeling myself.
-            </p>
-            <p>
-              I believe everyone deserves to genuinely connect with the place
-              they live, and that it shouldn't depend on your budget. So for now
-              I run Urban Kickstart on a{" "}
-              <strong className="hl">pay-what-you-feel</strong> basis: you join a
-              mini meetup, we explore the city together, and afterwards you
-              contribute whatever it was worth to you.
-            </p>
-          </div>
+          <p className="mm-caption">
+            I run Urban Kickstart on a{" "}
+            <strong className="hl">pay-what-you-feel</strong> basis — because
+            connecting with your city shouldn't depend on your budget.
+          </p>
         </div>
       </section>
 
@@ -277,11 +284,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Impressions of Amsterdam */}
-      <Gallery />
-
       {/* Testimonials */}
-      <section className="section">
+      <section className="section section-alt">
         <div className="wrap">
           <h2>What people say</h2>
           <Testimonials />
@@ -293,7 +297,7 @@ export default function Home() {
       <Media />
 
       {/* For companies */}
-      <section className="section">
+      <section className="section section-alt">
         <div className="wrap narrow center">
           <h2>Hiring international talent?</h2>
           <p>
@@ -309,7 +313,7 @@ export default function Home() {
       </section>
 
       {/* Contact */}
-      <section id="contact" className="section section-alt">
+      <section id="contact" className="section">
         <div className="wrap narrow">
           <h2>Get in touch</h2>
           <p className="section-intro">

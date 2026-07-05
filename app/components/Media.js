@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import press from "../data/press";
+import fair from "../data/fair";
+import PhotoGrid from "./PhotoGrid";
 
 // Shows the outlet logo; falls back to the outlet name in text if the logo
 // image is missing or fails to load.
@@ -46,6 +48,7 @@ export default function Media() {
             </a>
           ))}
         </div>
+        <PhotoGrid items={fair} title="At the IamExpat Fair Amsterdam" />
       </div>
     </section>
   );

@@ -527,6 +527,12 @@ h2 {
   object-fit: contain;
 }
 
+/* Photo strip sub-heading */
+.subhead {
+  margin: 2.6rem 0 0;
+  font-size: 1.3rem;
+}
+
 /* Gallery — impressions of Amsterdam */
 .gallery-grid {
   display: grid;

@@ -3,7 +3,9 @@ import ContactForm from "./components/ContactForm";
 import Gallery from "./components/Gallery";
 import AboutPhoto from "./components/AboutPhoto";
 import Media from "./components/Media";
+import PhotoGrid from "./components/PhotoGrid";
 import events from "./data/events";
+import experiences from "./data/experiences";
 import {
   MEETUP_URL,
   CONTACT_EMAIL,
@@ -226,6 +228,7 @@ export default function Home() {
         <div className="wrap">
           <h2>What people say</h2>
           <Testimonials />
+          <PhotoGrid items={experiences} title="Moments from the meetups" />
         </div>
       </section>
 

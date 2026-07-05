@@ -52,17 +52,17 @@ export default function Home() {
       {/* Hero */}
       <section className="hero">
         <div className="wrap">
-          <h1>Feel at home in Amsterdam.</h1>
+          <h1>Get to know the real Amsterdam.</h1>
           <p className="lead">
-            Small, warm meetups that help internationals truly connect with the
-            city — the neighbourhoods, the culture, and the people.
+            Small meetups where internationals connect with the city — and with
+            each other — guided by a local who actually lives it.
           </p>
           <div className="hero-actions">
             <a className="btn" href={MEETUP_URL} target="_blank" rel="noreferrer">
               Join a mini meetup
             </a>
-            <a className="btn btn-ghost" href="#initiative">
-              What's this about?
+            <a className="btn btn-ghost" href="#how">
+              How it works
             </a>
           </div>
         </div>
@@ -74,22 +74,53 @@ export default function Home() {
           <h2>A small initiative, with a big belief behind it.</h2>
           <p>
             Moving to a new city is exciting — and, quietly, often isolating. I
-            believe everyone deserves to feel genuinely at home, and that it
-            shouldn't depend on your budget.
+            believe everyone deserves to genuinely connect with the place they
+            live, and that it shouldn't depend on your budget.
           </p>
           <p>
             So for now, Urban Kickstart runs on a{" "}
             <strong className="hl">pay-what-you-feel</strong> basis. You join a
-            mini meetup,
-            connect with a local and a few fellow newcomers, and afterwards you
-            contribute whatever it was worth to you. No fixed price, no
-            pressure — just people helping people land.
+            mini meetup, meet a local and a few fellow internationals, and
+            afterwards you contribute whatever it was worth to you. No fixed
+            price, no pressure.
           </p>
         </div>
       </section>
 
+      {/* How it works */}
+      <section id="how" className="section section-alt">
+        <div className="wrap">
+          <h2>How it works</h2>
+          <ol className="steps">
+            <li className="step">
+              <span className="step-num">1</span>
+              <h3>Sign up on Meetup</h3>
+              <p>Pick an upcoming mini meetup and reserve your spot in a few clicks.</p>
+            </li>
+            <li className="step">
+              <span className="step-num">2</span>
+              <h3>Meet in the city</h3>
+              <p>
+                Join a local and a few fellow internationals at a café — for the
+                neighbourhoods, the culture, and the spots worth knowing.
+              </p>
+            </li>
+            <li className="step">
+              <span className="step-num">3</span>
+              <h3>Pay what you feel</h3>
+              <p>Afterwards, contribute whatever the session was worth to you. No fixed price.</p>
+            </li>
+          </ol>
+          <div className="center">
+            <a className="btn" href={MEETUP_URL} target="_blank" rel="noreferrer">
+              Join a mini meetup
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* Meetups + agenda */}
-      <section id="meetups" className="section section-alt">
+      <section id="meetups" className="section">
         <div className="wrap">
           <h2>Upcoming mini meetups</h2>
           <p className="section-intro">
@@ -181,8 +212,8 @@ export default function Home() {
           <p>
             In the future I'd love to work with a company that welcomes people
             from all over the world. If you'd like your new colleagues to settle
-            in faster and feel truly connected to Amsterdam, let's talk about
-            what a fair collaboration could look like.
+            in faster and connect with Amsterdam, let's talk about what a fair
+            collaboration could look like.
           </p>
           <a className="btn btn-ghost" href="#contact">
             Start a conversation
@@ -207,7 +238,7 @@ export default function Home() {
           <div>
             <span className="logo">Urban Kickstart</span>
             <p className="footer-note">
-              Helping internationals feel at home in Amsterdam.
+              Helping internationals connect with Amsterdam.
             </p>
           </div>
           <div className="footer-links">

@@ -39,11 +39,11 @@ export default function Gallery() {
   if (visible.length === 0) return null;
 
   return (
-    <section className="section">
+    <section className="section section-alt">
       <div className="wrap">
         <h2>Impressions of Amsterdam</h2>
         <p className="section-intro">
-          A little taste of the city you're about to call home.
+          A glimpse of the city you're moving to.
         </p>
         <div className="gallery-grid">
           {gallery.map((img, i) =>

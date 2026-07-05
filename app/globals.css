@@ -192,6 +192,42 @@ h2 {
   margin-top: 0;
 }
 
+/* Meet Emma */
+.about-grid {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+.about-photo img,
+.about-photo-fallback {
+  width: 100%;
+  border-radius: var(--radius);
+  display: block;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+.about-photo-fallback {
+  background: var(--accent);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+  font-weight: 700;
+}
+.about-text h2 {
+  margin-top: 0;
+}
+@media (max-width: 720px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+  .about-photo {
+    max-width: 280px;
+  }
+}
+
 /* How it works — steps */
 .steps {
   list-style: none;

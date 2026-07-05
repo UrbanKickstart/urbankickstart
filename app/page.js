@@ -1,6 +1,7 @@
 import Testimonials from "./components/Testimonials";
 import ContactForm from "./components/ContactForm";
 import Gallery from "./components/Gallery";
+import AboutPhoto from "./components/AboutPhoto";
 import events from "./data/events";
 import press from "./data/press";
 import {
@@ -39,7 +40,7 @@ export default function Home() {
         <div className="wrap header-inner">
           <span className="logo">Urban Kickstart</span>
           <nav>
-            <a href="#initiative">About</a>
+            <a href="#about">About</a>
             <a href="#meetups">Meetups</a>
             <a href="#contact">Contact</a>
             <a className="btn btn-small" href={MEETUP_URL} target="_blank" rel="noreferrer">
@@ -55,7 +56,7 @@ export default function Home() {
           <h1>Get to know the real Amsterdam.</h1>
           <p className="lead">
             Small meetups where internationals connect with the city — and with
-            each other — guided by a local who actually lives it.
+            each other — guided by me, a born-and-raised local.
           </p>
           <div className="hero-actions">
             <a className="btn" href={MEETUP_URL} target="_blank" rel="noreferrer">
@@ -68,22 +69,35 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Initiative / message */}
-      <section id="initiative" className="section">
-        <div className="wrap narrow">
-          <h2>A small initiative, with a big belief behind it.</h2>
-          <p>
-            Moving to a new city is exciting — and, quietly, often isolating. I
-            believe everyone deserves to genuinely connect with the place they
-            live, and that it shouldn't depend on your budget.
-          </p>
-          <p>
-            So for now, Urban Kickstart runs on a{" "}
-            <strong className="hl">pay-what-you-feel</strong> basis. You join a
-            mini meetup, meet a local and a few fellow internationals, and
-            afterwards you contribute whatever it was worth to you. No fixed
-            price, no pressure.
-          </p>
+      {/* Meet Emma */}
+      <section id="about" className="section">
+        <div className="wrap about-grid">
+          <div className="about-photo">
+            <AboutPhoto />
+          </div>
+          <div className="about-text">
+            <h2>Hi, I'm Emma</h2>
+            <p>
+              Born and raised in Amsterdam, with an international mindset and a
+              double Master's. For as long as I can remember, friends have come
+              to me for the best of the city — where to go, what's on, who to
+              meet.
+            </p>
+            <p>
+              Over time I started doing this for internationals too: the people
+              who need it most when they arrive somewhere new — capable and
+              accomplished, but still finding their footing. I know that feeling
+              myself.
+            </p>
+            <p>
+              I believe everyone deserves to genuinely connect with the place
+              they live, and that it shouldn't depend on your budget. So for now
+              I run Urban Kickstart on a{" "}
+              <strong className="hl">pay-what-you-feel</strong> basis: you join a
+              mini meetup, we explore the city together, and afterwards you
+              contribute whatever it was worth to you.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -101,7 +115,7 @@ export default function Home() {
               <span className="step-num">2</span>
               <h3>Meet in the city</h3>
               <p>
-                Join a local and a few fellow internationals at a café — for the
+                Join me and a few fellow internationals at a café — for the
                 neighbourhoods, the culture, and the spots worth knowing.
               </p>
             </li>
@@ -142,7 +156,7 @@ export default function Home() {
             <div className="cover-card">
               <h3>Tailored to you</h3>
               <p className="cover-sub">
-                Then we build the rest around your life and interests:
+                Then I tailor the rest to your life and interests:
               </p>
               <ul className="ticks">
                 <li>Annual &amp; one-off events</li>
@@ -274,7 +288,7 @@ export default function Home() {
           <div>
             <span className="logo">Urban Kickstart</span>
             <p className="footer-note">
-              Helping internationals connect with Amsterdam.
+              I help internationals connect with Amsterdam.
             </p>
           </div>
           <div className="footer-links">

@@ -219,16 +219,51 @@ h2 {
   z-index: 2;
 }
 .hero-topics {
-  color: rgba(255, 255, 255, 0.92);
+  color: var(--lime);
   font-size: clamp(0.9rem, 1.7vw, 1.1rem);
   letter-spacing: 0.01em;
+  font-weight: 500;
   max-width: 780px;
   margin: 1.2rem auto 1.8rem;
-  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.55);
+}
+.hook-title {
+  font-size: clamp(1.6rem, 3.5vw, 2.3rem);
+  margin: 0 0 0.5rem;
+}
+.checklist {
+  list-style: none;
+  padding: 0;
+  margin: 1.8rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  max-width: 480px;
+  text-align: left;
+}
+.check {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  font-size: 1.15rem;
+}
+.check .ci {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+}
+.check.done .label {
+  color: var(--muted);
+  text-decoration: line-through;
+  text-decoration-color: rgba(0, 0, 0, 0.25);
+}
+.check.open {
+  font-weight: 700;
+  font-size: 1.25rem;
 }
 .hook-text {
-  font-size: clamp(1.35rem, 3vw, 2rem);
-  line-height: 1.4;
+  font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+  line-height: 1.5;
   margin: 0;
 }
 .hero h1 {

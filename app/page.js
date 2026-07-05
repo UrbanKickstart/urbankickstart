@@ -46,8 +46,8 @@ export default function Home() {
             Amsterdam.
           </h1>
           <p className="hero-topics">
-            History · Trends · Neighborhoods · Culture · Subculture · Yearly and
-            occasional Events · Places · Courses · Memberships
+            History · Trends · Neighborhoods · Culture · Subcultures · Yearly &
+            Occasional Events · Places · Courses · Memberships
           </p>
           <div className="hero-actions">
             <a className="btn btn-ghost" href="#how">
@@ -57,14 +57,58 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Audience hook */}
+      {/* Audience hook — checklist */}
       <section className="section hook">
         <div className="wrap narrow center">
+          <h2 className="hook-title">New in Amsterdam?</h2>
+          <ul className="checklist">
+            <li className="check done">
+              <svg className="ci" viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="11" fill="var(--accent)" />
+                <path
+                  d="M7 12.5l3.2 3.2L17 9"
+                  fill="none"
+                  stroke="#fff"
+                  strokeWidth="2.2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+              <span className="label">Job — started</span>
+            </li>
+            <li className="check done">
+              <svg className="ci" viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="11" fill="var(--accent)" />
+                <path
+                  d="M7 12.5l3.2 3.2L17 9"
+                  fill="none"
+                  stroke="#fff"
+                  strokeWidth="2.2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+              <span className="label">A place to live — sorted</span>
+            </li>
+            <li className="check open">
+              <svg className="ci" viewBox="0 0 24 24" aria-hidden="true">
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="10.5"
+                  fill="none"
+                  stroke="var(--accent)"
+                  strokeWidth="2"
+                  strokeDasharray="3 3"
+                />
+              </svg>
+              <span className="label">Social &amp; cultural integration — not yet</span>
+            </li>
+          </ul>
           <p className="hook-text">
-            You've moved to Amsterdam. The job has started and the flat is
-            sorted — but the city still doesn't quite feel like yours yet. That's
-            exactly what Urban Kickstart is for: helping international
-            professionals and their partners find their place here.
+            That last one is where Urban Kickstart comes in — for international
+            professionals and their partners, new to Amsterdam, who want to
+            genuinely connect with the city.
           </p>
         </div>
       </section>
@@ -133,7 +177,7 @@ export default function Home() {
                 <li>Trends</li>
                 <li>Neighborhoods</li>
                 <li>Culture</li>
-                <li>Subculture</li>
+                <li>Subcultures</li>
               </ul>
             </div>
             <div className="cover-card">

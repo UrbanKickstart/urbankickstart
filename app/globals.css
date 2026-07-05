@@ -544,6 +544,70 @@ h2 {
   object-fit: contain;
 }
 
+/* In the media — prominent logos + description per item */
+.media-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-top: 2rem;
+}
+.media-item {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 2.5rem;
+  align-items: center;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 2rem 2.2rem;
+  text-decoration: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.media-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+.media-logo-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 96px;
+}
+.media-logo-box .press-logo {
+  height: 84px;
+  max-width: 220px;
+}
+.media-logo-box .press-outlet {
+  font-size: 1.7rem;
+  font-weight: 700;
+  text-align: center;
+}
+.media-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.media-body p {
+  margin: 0;
+  font-size: 1.05rem;
+}
+.media-body blockquote {
+  margin: 0.2rem 0 0;
+  color: var(--muted);
+  font-style: italic;
+  font-size: 1.1rem;
+}
+@media (max-width: 640px) {
+  .media-item {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+    text-align: center;
+  }
+  .media-body {
+    align-items: center;
+  }
+}
+
 /* Photo strip sub-heading */
 .subhead {
   margin: 2.6rem 0 0;

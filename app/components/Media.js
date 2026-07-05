@@ -5,8 +5,8 @@ import press from "../data/press";
 import fair from "../data/fair";
 import PhotoGrid from "./PhotoGrid";
 
-// Shows the outlet logo; falls back to the outlet name in text if the logo
-// image is missing or fails to load.
+// Shows the outlet logo prominently; falls back to the outlet name in text
+// if the logo image is missing or fails to load.
 function Logo({ item }) {
   const [failed, setFailed] = useState(false);
   if (!item.logo || failed) {
@@ -30,21 +30,24 @@ export default function Media() {
     <section id="media" className="section">
       <div className="wrap">
         <h2>In the media</h2>
-        <div className="press-grid">
+        <div className="media-list">
           {items.map((p, i) => (
             <a
               key={i}
-              className="press-card"
+              className="media-item"
               href={p.url}
               target="_blank"
               rel="noreferrer"
             >
-              <span className="press-logo-wrap">
+              <div className="media-logo-box">
                 <Logo item={p} />
-              </span>
-              <span className="press-format">{p.format}</span>
-              {p.quote && <blockquote>“{p.quote}”</blockquote>}
-              <span className="press-link">{p.linkText || "View"} →</span>
+              </div>
+              <div className="media-body">
+                <span className="press-format">{p.format}</span>
+                {p.description && <p>{p.description}</p>}
+                {p.quote && <blockquote>“{p.quote}”</blockquote>}
+                <span className="press-link">{p.linkText || "View"} →</span>
+              </div>
             </a>
           ))}
         </div>

@@ -1,22 +1,28 @@
-// Press mentions shown in the "In the press" section.
+// "In the media" mentions.
 //
-// TODO (Emma): add the real links and the exact quote you want to show.
-// Set "url" to the podcast/article link, and put the pull-quote you like in "quote".
+// Each item shows a card that links out. "quote" is optional — add a short
+// pull-quote if you have one. Set "url" to "#" to hide an item until you have
+// its link (it won't render).
 
 const press = [
   {
     outlet: "Het Parool",
     format: "Podcast",
-    quote:
-      "Add the quote from the Parool podcast here.",
-    url: "#", // replace with the podcast link
+    url: "https://open.spotify.com/episode/635ZDe3iSa2C18DabhswPI?si=899Ss12uRBCLwpDXxR5qDg&t=1142",
+    linkText: "Listen on Spotify",
+    // quote: "Add a short quote here if you'd like.",
   },
   {
     outlet: "Bram Radio",
     format: "Radio",
-    quote:
-      "Add the quote from the Bram Radio feature here.",
-    url: "#", // replace with the radio link
+    url: "https://open.spotify.com/show/2QBdbJyd9FxIjE7qh9Awum?si=5TPx5E8sRla1Gcg2xri8bw",
+    linkText: "Listen on Spotify",
+  },
+  {
+    outlet: "IamExpat Fair",
+    format: "Event",
+    url: "https://amsterdam.iamexpatfair.nl/#/exhibitors?lang=en",
+    linkText: "See the fair",
   },
 ];
 

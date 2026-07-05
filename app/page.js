@@ -233,7 +233,7 @@ export default function Home() {
       {hasPress && (
         <section className="section">
           <div className="wrap">
-            <h2>In the press</h2>
+            <h2>In the media</h2>
             <div className="press-grid">
               {press
                 .filter((p) => p.url && p.url !== "#")
@@ -247,7 +247,8 @@ export default function Home() {
                   >
                     <span className="press-outlet">{p.outlet}</span>
                     <span className="press-format">{p.format}</span>
-                    <blockquote>“{p.quote}”</blockquote>
+                    {p.quote && <blockquote>“{p.quote}”</blockquote>}
+                    <span className="press-link">{p.linkText || "View"} →</span>
                   </a>
                 ))}
             </div>

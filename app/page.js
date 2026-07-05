@@ -41,7 +41,10 @@ export default function Home() {
       <section className="hero">
         <HeroSlideshow />
         <div className="wrap hero-content">
-          <h1>Get to know the real Amsterdam.</h1>
+          <h1>
+            Get to know <span className="font-display">the real</span>{" "}
+            Amsterdam.
+          </h1>
           <p className="lead">
             Small meetups for international professionals and their partners
             settling into Amsterdam — connect with the city, and with each
@@ -122,6 +125,17 @@ export default function Home() {
               Join a mini meetup
             </a>
           </div>
+        </div>
+      </section>
+
+      {/* Handwritten quote interlude */}
+      <section className="interlude">
+        <div className="wrap narrow">
+          <p className="font-handwritten interlude-quote">
+            “Would recommend to anyone who feels a bit lost in Amsterdam — or
+            who wants to connect on a deeper level than just having drinks.”
+          </p>
+          <p className="interlude-attr">— Arthur</p>
         </div>
       </section>
 

@@ -514,6 +514,18 @@ h2 {
   font-weight: 600;
   color: var(--accent-dark);
 }
+.press-logo-wrap {
+  display: flex;
+  align-items: center;
+  min-height: 52px;
+  margin-bottom: 0.3rem;
+}
+.press-logo {
+  height: 44px;
+  width: auto;
+  max-width: 180px;
+  object-fit: contain;
+}
 
 /* Gallery — impressions of Amsterdam */
 .gallery-grid {

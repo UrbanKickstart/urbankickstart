@@ -1,0 +1,11 @@
+Zet hier de logo's van je media-mentions neer.
+
+Verwachte bestandsnamen:
+  parool.png         -> Het Parool
+  bram-radio.png     -> Bram Radio
+  iamexpat-fair.png  -> IamExpat Fair
+
+Tips:
+- Een PNG met transparante achtergrond (of een SVG) staat het mooist.
+- Ontbreekt een logo? Dan toont de kaart automatisch gewoon de naam als tekst.
+- Dit tekstbestandje mag je laten staan of verwijderen.

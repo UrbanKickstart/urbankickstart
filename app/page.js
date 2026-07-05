@@ -2,8 +2,8 @@ import Testimonials from "./components/Testimonials";
 import ContactForm from "./components/ContactForm";
 import Gallery from "./components/Gallery";
 import AboutPhoto from "./components/AboutPhoto";
+import Media from "./components/Media";
 import events from "./data/events";
-import press from "./data/press";
 import {
   MEETUP_URL,
   CONTACT_EMAIL,
@@ -31,7 +31,6 @@ function formatDate(dateStr) {
 
 export default function Home() {
   const upcoming = upcomingEvents();
-  const hasPress = press.some((p) => p.url && p.url !== "#");
 
   return (
     <>
@@ -229,32 +228,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Press */}
-      {hasPress && (
-        <section className="section">
-          <div className="wrap">
-            <h2>In the media</h2>
-            <div className="press-grid">
-              {press
-                .filter((p) => p.url && p.url !== "#")
-                .map((p, i) => (
-                  <a
-                    key={i}
-                    className="press-card"
-                    href={p.url}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <span className="press-outlet">{p.outlet}</span>
-                    <span className="press-format">{p.format}</span>
-                    {p.quote && <blockquote>“{p.quote}”</blockquote>}
-                    <span className="press-link">{p.linkText || "View"} →</span>
-                  </a>
-                ))}
-            </div>
-          </div>
-        </section>
-      )}
+      {/* Media */}
+      <Media />
 
       {/* For companies */}
       <section className="section section-alt">

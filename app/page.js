@@ -118,37 +118,91 @@ export default function Home() {
           <h2>How it works</h2>
           <ol className="steps">
             <li className="step">
-              <span className="step-num">1</span>
-              <h3>Sign up on Meetup</h3>
-              <p>
-                Browse the upcoming mini meetups and reserve your spot in a
-                couple of clicks.
-              </p>
+              <div className="step-head">
+                <span className="step-num">1</span>
+                <h3>Sign up on Meetup</h3>
+              </div>
+              <ul className="step-list">
+                <li>Browse the upcoming mini meetups</li>
+                <li>Reserve your spot in a couple of clicks</li>
+              </ul>
               <MeetupLogo />
             </li>
             <li className="step">
-              <span className="step-num">2</span>
-              <h3>Meet in the city</h3>
-              <p>
-                I meet with just 1–3 people at a coffee place or bar. We sit at
-                a table, I bring my laptop with all the info, and we dive into a
-                relaxed, genuinely informative session — personal and tailored
-                to your interests.
-              </p>
+              <div className="step-head">
+                <span className="step-num">2</span>
+                <h3>Meet in the city</h3>
+              </div>
+              <ul className="step-list">
+                <li>Just 1–3 people, at a coffee place or bar</li>
+                <li>I bring my laptop with all the relevant info</li>
+                <li>Relaxed but genuinely informative</li>
+                <li>Personal &amp; tailored to your interests</li>
+              </ul>
             </li>
             <li className="step">
-              <span className="step-num">3</span>
-              <h3>Pay what you feel &amp; share your thoughts</h3>
-              <p>
-                Afterwards, contribute whatever the session was worth to you —
-                no fixed price. And share your feedback, so I can make the
-                sessions even better.
-              </p>
+              <div className="step-head">
+                <span className="step-num">3</span>
+                <h3>Pay what you feel</h3>
+              </div>
+              <ul className="step-list">
+                <li>Contribute whatever it was worth to you — no fixed price</li>
+                <li>Share your feedback, so I can improve the sessions even more</li>
+              </ul>
             </li>
           </ol>
           <div className="center">
             <a className="btn" href={MEETUP_URL} target="_blank" rel="noreferrer">
               Join a mini meetup
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Meetups + agenda */}
+      <section id="meetups" className="section">
+        <div className="wrap">
+          <h2>Upcoming mini meetups</h2>
+          <p className="section-intro">
+            Sessions happen on an occasional basis. The full, always-current
+            list lives on Meetup — that's the place to sign up.
+          </p>
+
+          {upcoming.length > 0 ? (
+            <ul className="agenda">
+              {upcoming.map((e, i) => (
+                <li key={i} className="agenda-item">
+                  <div className="agenda-date">
+                    <span className="agenda-day">{formatDate(e.date)}</span>
+                    {e.time && <span className="agenda-time">{e.time}</span>}
+                  </div>
+                  <div className="agenda-body">
+                    <strong>{e.title}</strong>
+                    {e.location && <span className="agenda-loc">{e.location}</span>}
+                  </div>
+                  {e.url && (
+                    <a
+                      className="agenda-link"
+                      href={e.url}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Sign up →
+                    </a>
+                  )}
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p className="agenda-empty">
+              Nothing on the calendar right this moment. Follow the Meetup group
+              below to be the first to know when the next one drops.
+            </p>
+          )}
+
+          <div className="center">
+            <a className="btn" href={MEETUP_URL} target="_blank" rel="noreferrer">
+              See all meetups & sign up
             </a>
           </div>
         </div>
@@ -225,6 +279,7 @@ export default function Home() {
                 <AboutPhoto />
               </div>
               <span className="mm-name">Emma</span>
+              <span className="mm-role">Founder &amp; local</span>
             </div>
             <div className="mm-node n1">Born &amp; raised local</div>
             <div className="mm-node n2">International mindset</div>
@@ -241,59 +296,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Meetups + agenda */}
-      <section id="meetups" className="section">
-        <div className="wrap">
-          <h2>Upcoming mini meetups</h2>
-          <p className="section-intro">
-            Sessions happen on an occasional basis. The full, always-current
-            list lives on Meetup — that's the place to sign up.
-          </p>
-
-          {upcoming.length > 0 ? (
-            <ul className="agenda">
-              {upcoming.map((e, i) => (
-                <li key={i} className="agenda-item">
-                  <div className="agenda-date">
-                    <span className="agenda-day">{formatDate(e.date)}</span>
-                    {e.time && <span className="agenda-time">{e.time}</span>}
-                  </div>
-                  <div className="agenda-body">
-                    <strong>{e.title}</strong>
-                    {e.location && <span className="agenda-loc">{e.location}</span>}
-                  </div>
-                  {e.url && (
-                    <a
-                      className="agenda-link"
-                      href={e.url}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      Sign up →
-                    </a>
-                  )}
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <p className="agenda-empty">
-              Nothing on the calendar right this moment. Follow the Meetup group
-              below to be the first to know when the next one drops.
-            </p>
-          )}
-
-          <div className="center">
-            <a className="btn" href={MEETUP_URL} target="_blank" rel="noreferrer">
-              See all meetups & sign up
-            </a>
-          </div>
-        </div>
-      </section>
-
       {/* Testimonials */}
-      <section className="section section-alt">
+      <section className="section">
         <div className="wrap">
-          <h2>What people say</h2>
+          <h2>Experiences</h2>
           <Testimonials />
         </div>
       </section>
@@ -301,17 +307,22 @@ export default function Home() {
       {/* Media */}
       <Media />
 
-      {/* For companies */}
-      <section className="section section-alt">
+      {/* For companies — open call */}
+      <section id="companies" className="callout">
         <div className="wrap narrow center">
-          <h2>Hiring international talent?</h2>
+          <span className="callout-eyebrow">An open call to companies</span>
+          <h2>Hiring international talent? Let's work together.</h2>
           <p>
-            In the future I'd love to work with a company that welcomes people
-            from all over the world. If you'd like your new colleagues to settle
-            in faster and connect with Amsterdam, let's talk about what a fair
-            collaboration could look like.
+            I started Urban Kickstart to push back against loneliness — and to
+            help newcomers build a real connection with Amsterdam and the people
+            who live here.
           </p>
-          <a className="btn btn-ghost" href="#contact">
+          <p>
+            If your company welcomes international talent, let's help your new
+            colleagues feel part of the city, not just employed in it. I'm open
+            to a fair collaboration — reach out and let's explore it.
+          </p>
+          <a className="btn btn-lime" href="#contact">
             Start a conversation
           </a>
         </div>

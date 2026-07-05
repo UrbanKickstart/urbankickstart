@@ -71,14 +71,21 @@ export default function Testimonials() {
     };
   }, []);
 
-  // Interleave quotes and photos: quote, photo, quote, photo, ...
+  // Spread the photos evenly across the quotes.
   const items = [];
-  const maxLen = Math.max(testimonials.length, photos.length);
-  for (let k = 0; k < maxLen; k++) {
-    if (testimonials[k]) {
-      items.push({ type: "quote", quote: testimonials[k].quote, name: testimonials[k].name });
+  const Q = testimonials.length;
+  const P = photos.length;
+  let pi = 0;
+  for (let k = 0; k < Q; k++) {
+    items.push({ type: "quote", quote: testimonials[k].quote, name: testimonials[k].name });
+    while (pi < P && Math.floor(((pi + 1) * Q) / (P + 1)) === k + 1) {
+      items.push({ type: "photo", src: photos[pi] });
+      pi++;
     }
-    if (photos[k]) items.push({ type: "photo", src: photos[k] });
+  }
+  while (pi < P) {
+    items.push({ type: "photo", src: photos[pi] });
+    pi++;
   }
   const count = items.length;
 

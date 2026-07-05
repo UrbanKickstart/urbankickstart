@@ -54,8 +54,9 @@ export default function Home() {
         <div className="wrap">
           <h1>Get to know the real Amsterdam.</h1>
           <p className="lead">
-            Small meetups where internationals connect with the city — and with
-            each other — guided by me, a born-and-raised local.
+            Small meetups for international professionals and their partners
+            settling into Amsterdam — connect with the city, and with each
+            other, guided by me, a born-and-raised local.
           </p>
           <div className="hero-actions">
             <a className="btn" href={MEETUP_URL} target="_blank" rel="noreferrer">
@@ -83,10 +84,10 @@ export default function Home() {
               meet.
             </p>
             <p>
-              Over time I started doing this for internationals too: the people
-              who need it most when they arrive somewhere new — capable and
-              accomplished, but still finding their footing. I know that feeling
-              myself.
+              Over time I started doing this for international professionals and
+              their partners too: the people who need it most when they arrive
+              somewhere new — capable and accomplished, but still finding their
+              footing. I know that feeling myself.
             </p>
             <p>
               I believe everyone deserves to genuinely connect with the place
@@ -264,7 +265,8 @@ export default function Home() {
           <div>
             <span className="logo">Urban Kickstart</span>
             <p className="footer-note">
-              I help internationals connect with Amsterdam.
+              I help international professionals and their partners connect with
+              Amsterdam.
             </p>
           </div>
           <div className="footer-links">

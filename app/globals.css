@@ -10,7 +10,7 @@
   --line: #ddd2dd; /* soft lilac line */
   --card: #ffffff;
   --radius: 16px;
-  --wrap: 1040px;
+  --wrap: 1280px;
 }
 
 * {
@@ -46,7 +46,7 @@ h2 {
 }
 
 .narrow {
-  max-width: 680px;
+  max-width: 760px;
 }
 
 .center {

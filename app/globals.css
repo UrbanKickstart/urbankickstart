@@ -550,6 +550,42 @@ h2 {
     grid-template-columns: 1fr;
   }
 }
+/* Smaller, denser grid for the many Amsterdam impressions */
+.gallery-grid--small {
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.5rem;
+}
+@media (max-width: 900px) {
+  .gallery-grid--small {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .gallery-grid--small {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.gallery-item--clickable img {
+  cursor: pointer;
+}
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 10, 16, 0.88);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 2rem;
+  cursor: zoom-out;
+}
+.lightbox img {
+  max-width: 92vw;
+  max-height: 92vh;
+  border-radius: 8px;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.5);
+}
 .gallery-item {
   position: relative;
   aspect-ratio: 1 / 1;

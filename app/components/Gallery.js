@@ -3,38 +3,40 @@
 import { useState } from "react";
 import gallery from "../data/gallery";
 
-// Tries the given src; if it 404s, automatically retries the other common
-// JPEG extension (.jpg <-> .jpeg) before giving up and hiding the tile.
-function swapExt(src) {
-  if (/\.jpg$/i.test(src)) return src.replace(/\.jpg$/i, ".jpeg");
-  if (/\.jpeg$/i.test(src)) return src.replace(/\.jpeg$/i, ".jpg");
-  return null;
+// Forgiving about file extension (tries .jpg/.jpeg/.JPG/.JPEG/.png), so
+// mixed-case iPhone exports still load on Vercel's case-sensitive servers.
+function candidates(src) {
+  const m = src.match(/^(.*)\.([^./]+)$/);
+  if (!m) return [src];
+  const base = m[1];
+  const orig = m[2];
+  const exts = ["jpg", "jpeg", "JPG", "JPEG", "png", "PNG", "webp"];
+  const ordered = [orig, ...exts.filter((e) => e.toLowerCase() !== orig.toLowerCase())];
+  return ordered.map((e) => `${base}.${e}`);
 }
 
-function GalleryImg({ img, onFail }) {
-  const [src, setSrc] = useState(img.src);
-  const [triedAlt, setTriedAlt] = useState(false);
-
-  function handleError() {
-    const alt = swapExt(src);
-    if (!triedAlt && alt) {
-      setTriedAlt(true);
-      setSrc(alt);
-    } else {
-      onFail();
-    }
-  }
-
+function Thumb({ item, onFail, onOpen }) {
+  const list = candidates(item.src);
+  const [i, setI] = useState(0);
   return (
-    <img src={src} alt={img.alt || "Amsterdam"} onError={handleError} />
+    <img
+      src={list[i]}
+      alt={item.alt || ""}
+      loading="lazy"
+      onClick={() => onOpen(list[i])}
+      onError={() => {
+        if (i + 1 < list.length) setI(i + 1);
+        else onFail();
+      }}
+    />
   );
 }
 
 export default function Gallery() {
   const [failed, setFailed] = useState({});
+  const [open, setOpen] = useState(null);
 
   if (gallery.length === 0) return null;
-
   const visible = gallery.filter((g) => !failed[g.src]);
   if (visible.length === 0) return null;
 
@@ -43,26 +45,28 @@ export default function Gallery() {
       <div className="wrap">
         <h2>Impressions of Amsterdam</h2>
         <p className="section-intro">
-          A glimpse of the city you're moving to.
+          A glimpse of the city you're moving to. Tap any photo to enlarge.
         </p>
-        <div className="gallery-grid">
+        <div className="gallery-grid gallery-grid--small">
           {gallery.map((img, i) =>
             failed[img.src] ? null : (
-              <div
-                key={i}
-                className={"gallery-item" + (img.wide ? " wide" : "")}
-              >
-                <GalleryImg
-                  img={img}
-                  onFail={() =>
-                    setFailed((f) => ({ ...f, [img.src]: true }))
-                  }
+              <div key={i} className="gallery-item gallery-item--clickable">
+                <Thumb
+                  item={img}
+                  onFail={() => setFailed((f) => ({ ...f, [img.src]: true }))}
+                  onOpen={setOpen}
                 />
               </div>
             )
           )}
         </div>
       </div>
+
+      {open && (
+        <div className="lightbox" onClick={() => setOpen(null)}>
+          <img src={open} alt="" />
+        </div>
+      )}
     </section>
   );
 }

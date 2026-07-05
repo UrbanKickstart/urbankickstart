@@ -36,21 +36,6 @@ export default function Home() {
 
   return (
     <>
-      {/* Header */}
-      <header className="site-header">
-        <div className="wrap header-inner">
-          <span className="logo">Urban Kickstart</span>
-          <nav>
-            <a href="#about">About</a>
-            <a href="#meetups">Meetups</a>
-            <a href="#contact">Contact</a>
-            <a className="btn btn-small" href={MEETUP_URL} target="_blank" rel="noreferrer">
-              Join on Meetup
-            </a>
-          </nav>
-        </div>
-      </header>
-
       {/* Hero */}
       <section className="hero">
         <div className="wrap">

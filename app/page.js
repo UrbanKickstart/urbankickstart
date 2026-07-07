@@ -3,8 +3,8 @@ import ContactForm from "./components/ContactForm";
 import AboutPhoto from "./components/AboutPhoto";
 import MeetupLogo from "./components/MeetupLogo";
 import Media from "./components/Media";
-import HeroSlideshow from "./components/HeroSlideshow";
-import HeroOutline from "./components/HeroOutline";
+import EditorialCover from "./components/EditorialCover";
+import EditorialPhoto from "./components/EditorialPhoto";
 import events from "./data/events";
 import {
   MEETUP_URL,
@@ -36,26 +36,8 @@ export default function Home() {
 
   return (
     <>
-      {/* Hero */}
-      <section className="hero">
-        <HeroSlideshow />
-        <div className="wrap hero-content">
-          <HeroOutline />
-          <h1>
-            Get to know <span className="font-display">the real</span>{" "}
-            Amsterdam.
-          </h1>
-          <p className="hero-topics">
-            History · Trends · Neighborhoods · Culture · Subcultures · Yearly &
-            Occasional Events · Places · Courses · Memberships
-          </p>
-          <div className="hero-actions">
-            <a className="btn btn-ghost" href="#how">
-              How it works
-            </a>
-          </div>
-        </div>
-      </section>
+      {/* Editorial cover */}
+      <EditorialCover />
 
       {/* Audience hook — checklist */}
       <section className="section hook">
@@ -113,6 +95,8 @@ export default function Home() {
           </p>
         </div>
       </section>
+
+      <EditorialPhoto n={1} variant="ed-b" />
 
       {/* How it works */}
       <section id="how" className="section section-alt">
@@ -210,6 +194,8 @@ export default function Home() {
         </div>
       </section>
 
+      <EditorialPhoto n={2} variant="ed-c" />
+
       {/* Handwritten quote interlude */}
       <section className="interlude">
         <div className="wrap narrow">
@@ -258,6 +244,8 @@ export default function Home() {
         </div>
       </section>
 
+      <EditorialPhoto n={3} variant="ed-d" />
+
       {/* Meet Emma — mindmap */}
       <section id="about" className="section section-alt">
         <div className="wrap center">
@@ -282,6 +270,8 @@ export default function Home() {
         </div>
       </section>
 
+      <EditorialPhoto n={4} variant="ed-e" />
+
       {/* Testimonials */}
       <section className="section">
         <div className="wrap">
@@ -289,6 +279,8 @@ export default function Home() {
           <Testimonials />
         </div>
       </section>
+
+      <EditorialPhoto n={5} variant="ed-f" />
 
       {/* Media */}
       <Media />

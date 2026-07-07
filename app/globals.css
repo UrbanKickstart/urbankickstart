@@ -29,6 +29,7 @@ body {
     "Segoe UI", Helvetica, Arial, sans-serif;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 /* Editorial italic accent (cultuursausje-style) */
@@ -352,6 +353,91 @@ h2 {
 }
 .hero .btn-ghost:hover {
   background: rgba(255, 255, 255, 0.14);
+}
+
+/* Editorial cover + scattered Amsterdam photos */
+.editorial-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 2.5rem;
+  padding: 4rem 6vw 2rem 0;
+}
+.editorial-top .ed-a {
+  margin: 0 0 0 -6vw;
+  width: calc(100% + 6vw);
+  aspect-ratio: 4 / 3;
+}
+.editorial h1 {
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  margin: 0 0 1rem;
+  line-height: 1.06;
+}
+.ed-topics {
+  color: var(--accent);
+  font-weight: 500;
+  font-size: clamp(0.95rem, 1.5vw, 1.08rem);
+  margin: 0 0 1.6rem;
+}
+.ed-photo {
+  overflow: hidden;
+  border-radius: 4px;
+}
+.ed-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.ed-b {
+  width: 42vw;
+  max-width: 470px;
+  aspect-ratio: 3 / 4;
+  margin: 3.5rem -5vw 3.5rem auto;
+}
+.ed-c {
+  width: 56vw;
+  max-width: 740px;
+  aspect-ratio: 16 / 9;
+  margin: 3.5rem auto;
+}
+.ed-d {
+  width: 48vw;
+  max-width: 560px;
+  aspect-ratio: 1 / 1;
+  margin: 3.5rem auto 3.5rem -5vw;
+}
+.ed-e {
+  width: 40vw;
+  max-width: 470px;
+  aspect-ratio: 3 / 4;
+  margin: 3.5rem 8vw 3.5rem auto;
+}
+.ed-f {
+  width: 54vw;
+  max-width: 700px;
+  aspect-ratio: 4 / 3;
+  margin: 3.5rem auto 3.5rem 8vw;
+}
+@media (max-width: 760px) {
+  .editorial-top {
+    grid-template-columns: 1fr;
+    padding: 2rem 0 1rem;
+    gap: 1.5rem;
+  }
+  .editorial-top .ed-a {
+    margin: 0;
+    width: 100%;
+  }
+  .ed-intro {
+    padding: 0 1.2rem;
+  }
+  .ed-photo {
+    width: 92vw !important;
+    max-width: none !important;
+    margin: 1.5rem auto !important;
+    aspect-ratio: 4 / 3;
+  }
 }
 
 /* Sections */

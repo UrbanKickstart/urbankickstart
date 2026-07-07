@@ -379,6 +379,14 @@ h2 {
   font-size: clamp(0.95rem, 1.5vw, 1.08rem);
   margin: 0 0 1.6rem;
 }
+.ed-lead {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin: 0 0 0.4rem;
+}
+.ed-intro .checklist {
+  margin: 1rem 0 1.6rem;
+}
 .ed-photo {
   overflow: hidden;
   border-radius: 4px;

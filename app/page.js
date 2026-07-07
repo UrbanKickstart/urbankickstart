@@ -39,119 +39,28 @@ export default function Home() {
       {/* Editorial cover */}
       <EditorialCover />
 
-      {/* Audience hook — checklist */}
-      <section className="section hook">
+      {/* Why I do this */}
+      <section className="section section-alt">
         <div className="wrap narrow center">
-          <h2 className="hook-title">
-            New in Amsterdam as an international professional or partner?
-          </h2>
-          <ul className="checklist">
-            <li className="check done">
-              <svg className="ci" viewBox="0 0 24 24" aria-hidden="true">
-                <circle cx="12" cy="12" r="11" fill="var(--accent)" />
-                <path
-                  d="M7 12.5l3.2 3.2L17 9"
-                  fill="none"
-                  stroke="#fff"
-                  strokeWidth="2.2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-              <span className="label">Job — started</span>
-            </li>
-            <li className="check done">
-              <svg className="ci" viewBox="0 0 24 24" aria-hidden="true">
-                <circle cx="12" cy="12" r="11" fill="var(--accent)" />
-                <path
-                  d="M7 12.5l3.2 3.2L17 9"
-                  fill="none"
-                  stroke="#fff"
-                  strokeWidth="2.2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-              <span className="label">A place to live — sorted</span>
-            </li>
-            <li className="check open">
-              <svg className="ci" viewBox="0 0 24 24" aria-hidden="true">
-                <circle
-                  cx="12"
-                  cy="12"
-                  r="10.5"
-                  fill="none"
-                  stroke="var(--accent)"
-                  strokeWidth="2"
-                  strokeDasharray="3 3"
-                />
-              </svg>
-              <span className="label">Social &amp; cultural kickstart — not yet</span>
-            </li>
-          </ul>
-          <p className="hook-text">
-            That last box is exactly what{" "}
-            <span className="hl">Urban Kickstart</span> is here for.
+          <h2>Why I do this</h2>
+          <p>
+            I started Urban Kickstart to push back against loneliness — and to
+            help internationals build a real connection with Amsterdam and the
+            people who live here. Everyone deserves to feel part of the city,
+            not just live in it.
           </p>
         </div>
       </section>
 
       <EditorialPhoto n={1} variant="ed-b" />
 
-      {/* How it works */}
-      <section id="how" className="section section-alt">
-        <div className="wrap">
-          <h2>How it works</h2>
-          <ol className="steps">
-            <li className="step">
-              <div className="step-head">
-                <span className="step-num">1</span>
-                <h3>Sign up on Meetup</h3>
-              </div>
-              <ul className="step-list">
-                <li>Browse the upcoming mini meetups</li>
-                <li>Reserve your spot in a couple of clicks</li>
-              </ul>
-              <MeetupLogo />
-            </li>
-            <li className="step">
-              <div className="step-head">
-                <span className="step-num">2</span>
-                <h3>Meet in the city</h3>
-              </div>
-              <ul className="step-list">
-                <li>Just 1–3 people, at a coffee place or bar</li>
-                <li>I bring my laptop with all the relevant info</li>
-                <li>Relaxed but genuinely informative</li>
-                <li>Personal &amp; tailored to your interests</li>
-              </ul>
-            </li>
-            <li className="step">
-              <div className="step-head">
-                <span className="step-num">3</span>
-                <h3>Pay what you feel</h3>
-              </div>
-              <ul className="step-list">
-                <li>Contribute whatever it was worth to you — no fixed price</li>
-                <li>Share your feedback, so I can improve the sessions even more</li>
-              </ul>
-            </li>
-          </ol>
-          <div className="center">
-            <a className="btn" href={MEETUP_URL} target="_blank" rel="noreferrer">
-              Join a mini meetup
-            </a>
-          </div>
-        </div>
-      </section>
-
       {/* Meetups + agenda */}
       <section id="meetups" className="section">
         <div className="wrap">
-          <h2>Upcoming mini meetups</h2>
+          <h2>Upcoming Kickstart sessions</h2>
           <p className="section-intro">
-            Sessions happen on an occasional basis. The full, always-current
-            list lives on Meetup — that's the place to sign up.
+            Kickstart sessions happen on an occasional basis. The full,
+            always-current list lives on Meetup — that's the place to sign up.
           </p>
 
           {upcoming.length > 0 ? (
@@ -188,7 +97,7 @@ export default function Home() {
 
           <div className="center">
             <a className="btn" href={MEETUP_URL} target="_blank" rel="noreferrer">
-              See all meetups & sign up
+              See all sessions & sign up
             </a>
           </div>
         </div>
@@ -303,6 +212,53 @@ export default function Home() {
           <a className="btn btn-lime" href="#contact">
             Start a conversation
           </a>
+        </div>
+      </section>
+
+      {/* How it works */}
+      <section id="how" className="section section-alt">
+        <div className="wrap">
+          <h2>How it works</h2>
+          <ol className="steps">
+            <li className="step">
+              <div className="step-head">
+                <span className="step-num">1</span>
+                <h3>Sign up on Meetup</h3>
+              </div>
+              <ul className="step-list">
+                <li>Browse the upcoming Kickstart sessions</li>
+                <li>Reserve your spot in a couple of clicks</li>
+              </ul>
+              <MeetupLogo />
+            </li>
+            <li className="step">
+              <div className="step-head">
+                <span className="step-num">2</span>
+                <h3>Meet in the city</h3>
+              </div>
+              <ul className="step-list">
+                <li>Just 1–3 people, at a coffee place or bar</li>
+                <li>I bring my laptop with all the relevant info</li>
+                <li>Relaxed but genuinely informative</li>
+                <li>Personal &amp; tailored to your interests</li>
+              </ul>
+            </li>
+            <li className="step">
+              <div className="step-head">
+                <span className="step-num">3</span>
+                <h3>Pay what you feel</h3>
+              </div>
+              <ul className="step-list">
+                <li>Contribute whatever it was worth to you — no fixed price</li>
+                <li>Share your feedback, so I can improve the sessions even more</li>
+              </ul>
+            </li>
+          </ol>
+          <div className="center">
+            <a className="btn" href={MEETUP_URL} target="_blank" rel="noreferrer">
+              Join a Kickstart session
+            </a>
+          </div>
         </div>
       </section>
 

@@ -52,12 +52,53 @@ export default function EditorialCover() {
       )}
       <div className="ed-intro">
         <h1>
-          Get to know <span className="font-display">the real</span> Amsterdam.
+          Your kickstart in <span className="font-display">Amsterdam</span>
         </h1>
-        <p className="ed-topics">
-          History · Trends · Neighborhoods · Culture · Subcultures · Yearly &
-          Occasional Events · Places · Courses · Memberships
-        </p>
+        <p className="ed-lead">This is for you if you:</p>
+        <ul className="checklist">
+          <li className="check done">
+            <svg className="ci" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="11" fill="var(--accent)" />
+              <path
+                d="M7 12.5l3.2 3.2L17 9"
+                fill="none"
+                stroke="#fff"
+                strokeWidth="2.2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+            <span className="label">Expat / remote job — started</span>
+          </li>
+          <li className="check done">
+            <svg className="ci" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="11" fill="var(--accent)" />
+              <path
+                d="M7 12.5l3.2 3.2L17 9"
+                fill="none"
+                stroke="#fff"
+                strokeWidth="2.2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+            <span className="label">An apartment — sorted</span>
+          </li>
+          <li className="check open">
+            <svg className="ci" viewBox="0 0 24 24" aria-hidden="true">
+              <circle
+                cx="12"
+                cy="12"
+                r="10.5"
+                fill="none"
+                stroke="var(--accent)"
+                strokeWidth="2"
+                strokeDasharray="3 3"
+              />
+            </svg>
+            <span className="label">Feeling at home — not yet</span>
+          </li>
+        </ul>
         <a className="btn btn-ghost" href="#how">
           How it works
         </a>
